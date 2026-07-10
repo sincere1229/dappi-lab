@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>脱皮ラボ ｜ スネークラボ研究所</title>
+    <meta name="description" content="葬儀のボッタクリ、介護の共倒れ、実家の不良債権、相続の泥沼……。世間の綺麗事をロジカルに解体し、あなたの資産と平穏を守り抜く生存戦略室。">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { background-color: #0B0B0C; color: #F3F4F6; font-family: 'Helvetica Neue', Arial, sans-serif; }
@@ -12,9 +13,96 @@
         .bg-snake-red { background-color: #E50914; }
         .bg-snake-red:hover { background-color: #B20710; }
         .border-neon { border-color: #E50914; box-shadow: 0 0 15px rgba(229, 9, 20, 0.2); }
+        .coming-soon { opacity: 0.55; pointer-events: none; }
+        .badge-soon { background: #232326; color: #9CA3AF; letter-spacing: 0.15em; }
+        .badge-live { background: #052e1b; color: #34d399; border: 1px solid #059669; }
     </style>
 </head>
 <body class="antialiased">
+
+<script>
+/* ============================================================
+   ★★★ 運用はここだけ触ればOK ★★★
+   noteに記事を公開したら、該当する url: "" にURLを貼るだけ。
+   空("")のままなら自動で「COMING SOON」表示になります。
+   ============================================================ */
+const CONFIG = {
+
+  // noteプロフィール（あいさつ記事を公開済みのアカウントURL）★最優先で記入
+  noteProfile: "",
+
+  // YouTubeチャンネル（未開設なら空のまま → セクションごと自動非表示）
+  youtubeChannel: "",
+
+  // ショート動画（YouTube/TikTokのURL。空なら非表示）
+  shorts: [
+    { series: "実家片付け編", color: "text-emerald-400",
+      title: "実家の片付けで大喧嘩する家がやらかしている共通の「ミス設定」",
+      url: "" },
+    { series: "離婚サバイバル編", color: "text-red-400",
+      title: "「うちの妻に限って…」ある日突然奥さんが消える『ステルス脱出』の法則",
+      url: "" },
+    { series: "人間ハッキング編", color: "text-purple-400",
+      title: "クソ上司は生年月日で丸裸。気学を使った「合法マウント」の取り方",
+      url: "" },
+  ],
+
+  // マガジンパック（noteマガジンURL）
+  packs: [
+    { key: "full",
+      badge: "👑 FULL COMPLETE PACK", badgeColor: "text-yellow-500",
+      frame: "from-yellow-600 to-red-600",
+      title: "【全15講】生存戦略パック",
+      sub: "単品総額 7,500円 ➡️ 1,980円",
+      url: "" },
+    { key: "uranai",
+      badge: "🔮 HUMAN HACKING PACK", badgeColor: "text-purple-400",
+      frame: "from-purple-600 to-indigo-600",
+      title: "【全5講】占い人間支配パック",
+      sub: "対人関係特化 ➡️ 1,200円",
+      url: "" },
+  ],
+
+  // シリーズ棚（マガジンor代表記事のURL。準備中はそのまま空で）
+  series: [
+    { name: "生存戦略編", range: "第1〜20講", emoji: "🐍", color: "emerald",
+      desc: "実家・近所・親戚・マナー利権。日常に仕掛けられた同調圧力の罠を一つずつ解体する基礎講義。",
+      url: "" },
+    { name: "相続サバイバル編", range: "第21〜25講", emoji: "⚔️", color: "red",
+      desc: "遺留分・使い込み・ハンコ代。血縁という名の戦場で、泣き寝入りせず取り分を守る実戦講義。",
+      url: "" },
+    { name: "占い・人間ハッキング編", range: "第26〜30講", emoji: "🔮", color: "purple",
+      desc: "バーナム効果からコールドリーディングまで。占いのカラクリを暴き、対人戦略に転用する。",
+      url: "" },
+    { name: "終活・渡す側編", range: "第35〜39講", emoji: "🕯️", color: "amber",
+      desc: "遺言・家族信託・死後事務。「渡す側」に回った瞬間に必要になる、資産凍結と争族の予防線。",
+      url: "" },
+    { name: "おひとりさま防衛編", range: "第61〜67講", emoji: "🛡️", color: "sky",
+      desc: "身元保証、入院、孤独死対策、老後資金。誰にも頼らない人生を制度で武装する防衛講義。",
+      url: "" },
+  ],
+
+  // ピックアップ講義（個別note記事のURL）
+  lectures: [
+    { no: "第12講", tag: "地方慣習", tagClass: "bg-emerald-950 text-emerald-400", price: "¥500",
+      title: "「右に倣え」の近所付き合いを、波風立てずにスルーする脱出マニュアル",
+      desc: "誰も住んでいない実家への出頭要請の正体を暴き、最高裁判例を印籠にして静かに縁を切る技術。",
+      cta: "この講義をダウンロードする 🐍",
+      url: "" },
+    { no: "第13講", tag: "実家片付け", tagClass: "bg-emerald-950 text-emerald-400", price: "¥500",
+      title: "溜め込む親の脳をハッキングして、喧嘩せずに荷物を捨てる心理誘導フレーズ",
+      desc: "「捨てる」を会話から追放し、親のOSに合わせた「譲る・活かす・守る」のコマンドで実家を空にせよ。",
+      cta: "この講義をダウンロードする 🐍",
+      url: "" },
+    { no: "第11講", tag: "離婚サバイバル", tagClass: "bg-red-950 text-red-400", price: "¥500",
+      title: "共有名義（50:50）という名の蟻地獄からスマートに脱出する不動産ハック",
+      desc: "ペアローン、権利割合のしがらみで「家が売れないから離婚できない」と絶望している羊さんへ。",
+      cta: "この講義をダウンロードする 💋",
+      url: "" },
+  ],
+};
+/* ============================================================ */
+</script>
 
     <!-- 🌐 NAVIGATION -->
     <nav class="w-full py-4 px-6 bg-[#0B0B0C] border-b border-[#232326] sticky top-0 z-50 backdrop-blur-md bg-opacity-80">
@@ -23,17 +111,17 @@
                 <span class="text-neon-red">脱皮</span>LABO
             </div>
             <div class="flex gap-6 text-sm font-medium text-gray-400">
-                <a href="#youtube" class="hover:text-white transition">YouTube</a>
+                <a href="#youtube" id="nav-youtube" class="hover:text-white transition">YouTube</a>
                 <a href="#columns" class="hover:text-white transition">生存講義(note)</a>
-                <a href="#affiliate" class="hover:text-white transition">資産防衛窓口</a>
+                <a href="#tools" class="hover:text-white transition">資産防衛ツール</a>
             </div>
         </div>
     </nav>
 
-    <!-- 🐍 HERO AREA (W看板スポットライト) -->
+    <!-- 🐍 HERO AREA -->
     <header class="relative w-full overflow-hidden bg-gradient-to-b from-[#141416] to-[#0B0B0C] py-20 px-6 border-b border-[#232326]">
         <div class="max-w-5xl mx-auto text-center relative z-10">
-            
+
             <!-- アバター配置（博士＆女史） -->
             <div class="flex justify-center items-center gap-12 mb-8">
                 <div class="relative group">
@@ -53,192 +141,94 @@
                 世間の綺麗事という<br class="md:hidden">「古い皮」を脱ぎ捨てて、<br>
                 <span class="text-neon-red">自分の人生を生きなさい。</span>
             </h1>
-            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-10">
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base leading-relaxed mb-8">
                 葬儀のボッタクリ、介護の共倒れ、実家の不良債権、仮面夫婦の蟻地獄……。<br>
                 人間界の同調圧力とマナー利権をロジカルに解体し、あなたの資産と平穏を守り抜く生存戦略室。
             </p>
 
-            <!-- 💸 バックエンドW導線（松・竹パック） -->
-            <div class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto justify-center">
-                
-                <!-- 松ルート：全15講パック -->
-                <div class="flex-1 p-0.5 bg-gradient-to-r from-yellow-600 to-red-600 rounded-xl shadow-2xl">
-                    <a href="【ここに全15講パックnoteのURL】" target="_blank" class="block h-full py-4 px-4 bg-[#141416] rounded-lg text-center hover:bg-[#1a1a1d] transition group">
-                        <span class="text-[10px] text-yellow-500 font-bold tracking-widest block mb-1">👑 FULL COMPLETE PACK</span>
-                        <span class="text-white font-black text-sm md:text-base group-hover:text-neon-red transition">【全15講】生存戦略パック</span>
-                        <span class="block text-gray-400 text-xs mt-1">単品総額 7,500円 ➡️ <span class="text-white font-bold">1,980円</span></span>
-                    </a>
-                </div>
-
-                <!-- 竹ルート：占い人間ハッキングパック -->
-                <div class="flex-1 p-0.5 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl shadow-2xl">
-                    <a href="【ここに占い5本パックnoteのURL】" target="_blank" class="block h-full py-4 px-4 bg-[#141416] rounded-lg text-center hover:bg-[#1a1a1d] transition group">
-                        <span class="text-[10px] text-purple-400 font-bold tracking-widest block mb-1">🔮 HUMAN HACKING PACK</span>
-                        <span class="text-white font-black text-sm md:text-base group-hover:text-purple-400 transition">【全5講】占い人間支配パック</span>
-                        <span class="block text-gray-400 text-xs mt-1">対人関係特化 ➡️ <span class="text-white font-bold">1,200円</span></span>
-                    </a>
-                </div>
-
+            <!-- 📓 note最新配信バナー -->
+            <div id="note-banner" class="max-w-2xl mx-auto mb-8 hidden">
+                <a id="note-banner-link" href="#" target="_blank" rel="noopener"
+                   class="block py-4 px-6 bg-snake-red rounded-xl text-white font-black text-base md:text-lg shadow-2xl hover:scale-[1.02] transition">
+                    📓 最新講義、noteで配信中。今日も一枚、皮を脱ぎなさい ＞
+                </a>
             </div>
+
+            <!-- 💸 バックエンドW導線（パック） -->
+            <div id="packs" class="flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto justify-center"></div>
         </div>
     </header>
 
     <!-- 🎥 YOUTUBE & SNS DRIVEN SECTION -->
-    <section id="youtube" class="py-16 px-6 max-w-7xl mx-auto">
+    <section id="youtube" class="py-16 px-6 max-w-7xl mx-auto hidden">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 border-l-4 border-neon pl-4">
             <div>
                 <h2 class="text-2xl font-black text-white tracking-wider">1分で脳を焼く。ショート生存講義</h2>
                 <p class="text-gray-400 text-sm mt-1">YouTube / TikTokの毒舌動画アーカイブ。まずはここで、常識の皮を剥ぎ取りなさい。</p>
             </div>
-            <a href="【ここにYouTubeチャンネルURL】" target="_blank" class="mt-4 md:mt-0 px-5 py-2 bg-zinc-800 text-sm font-bold rounded-full hover:bg-zinc-700 transition text-white">
+            <a id="youtube-channel-btn" href="#" target="_blank" rel="noopener" class="mt-4 md:mt-0 px-5 py-2 bg-zinc-800 text-sm font-bold rounded-full hover:bg-zinc-700 transition text-white hidden">
                 チャンネル登録してハッキングする ＞
             </a>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-dark-card rounded-xl p-4 flex flex-col justify-between">
-                <div class="aspect-video bg-zinc-900 rounded-lg mb-4 flex items-center justify-center border border-zinc-800 relative overflow-hidden group cursor-pointer">
-                    <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:scale-105 transition" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600');"></div>
-                    <div class="w-12 h-12 rounded-full bg-neon-red flex items-center justify-center relative z-10 shadow-lg">
-                        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                </div>
-                <div>
-                    <span class="text-xs font-bold text-emerald-400">実家片付け編</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">実家の片付けで大喧嘩する家がやらかしている共通の「ミス設定」</h3>
-                    <a href="【動画URL】" class="text-xs text-neon-red font-bold hover:underline">動画を見る 🎥</a>
-                </div>
-            </div>
-
-            <div class="bg-dark-card rounded-xl p-4 flex flex-col justify-between">
-                <div class="aspect-video bg-zinc-900 rounded-lg mb-4 flex items-center justify-center border border-zinc-800 relative overflow-hidden group cursor-pointer">
-                    <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:scale-105 transition" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600');"></div>
-                    <div class="w-12 h-12 rounded-full bg-neon-red flex items-center justify-center relative z-10 shadow-lg">
-                        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                </div>
-                <div>
-                    <span class="text-xs font-bold text-red-400">離婚サバイバル編</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">「うちの妻に限って…」ある日突然奥さんが消える『ステルス脱出』の法則</h3>
-                    <a href="【動画URL】" class="text-xs text-neon-red font-bold hover:underline">動画を見る 💋</a>
-                </div>
-            </div>
-
-            <div class="bg-dark-card rounded-xl p-4 flex flex-col justify-between">
-                <div class="aspect-video bg-zinc-900 rounded-lg mb-4 flex items-center justify-center border border-zinc-800 relative overflow-hidden group cursor-pointer">
-                    <div class="absolute inset-0 bg-cover bg-center opacity-60 group-hover:scale-105 transition" style="background-image: url('https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=600');"></div>
-                    <div class="w-12 h-12 rounded-full bg-neon-red flex items-center justify-center relative z-10 shadow-lg">
-                        <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                </div>
-                <div>
-                    <span class="text-xs font-bold text-purple-400">人間ハッキング占い編</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">クソ上司は生年月日で丸裸。気学を使った「合法マウント」の取り方</h3>
-                    <a href="【動画URL】" class="text-xs text-neon-red font-bold hover:underline">動画を見る 💋</a>
-                </div>
-            </div>
-        </div>
+        <div id="shorts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
     </section>
 
-    <!-- 📚 AUTOMATION NOTE COLUMNS -->
-    <section id="columns" class="py-16 bg-[#141416] px-6">
+    <!-- 🐍 SERIES SHELF -->
+    <section id="columns" class="py-16 px-6 bg-[#0E0E10] border-y border-[#232326]">
         <div class="max-w-7xl mx-auto">
-            <div class="border-l-4 border-neon pl-4 mb-10">
+            <div class="mb-10 border-l-4 border-neon pl-4">
                 <h2 class="text-2xl font-black text-white tracking-wider">有料note・サバイバル個別戦略講義</h2>
-                <p class="text-gray-400 text-sm mt-1">あなたの人生にかかる何百万円もの「無駄なマナー税」を即座にゼロにする実務スクリプト。</p>
+                <p class="text-gray-400 text-sm mt-1">1講義 ¥500。あなたの戦場に合わせて、必要な武器だけを取りに来なさい。</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-[#0B0B0C] border border-[#232326] rounded-xl p-6 flex flex-col justify-between hover:border-red-600 transition">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="bg-emerald-950 text-emerald-400 text-xs px-2 py-1 rounded font-bold">第12講 ｜ 地方慣習</span>
-                            <span class="text-gray-500 text-xs">¥500</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-white mb-2 hover:text-neon-red transition">
-                            <a href="【個別noteへのリンク】" target="_blank">「右に倣え」の近所付き合いを、波風立てずにスルーする脱出マニュアル</a>
-                        </h4>
-                        <p class="text-gray-400 text-xs line-clamp-3 leading-relaxed">
-                            誰も住んでいない実家への出頭要請の正体を暴き、最高裁判例を印籠にして静かに縁を切る技術。
-                        </p>
-                    </div>
-                    <a href="【個別noteへのリンク】" target="_blank" class="mt-6 block w-full py-2 bg-zinc-800 text-center text-xs font-bold text-white rounded-lg hover:bg-zinc-700 transition">この講義をダウンロードする 🐍</a>
-                </div>
+            <!-- シリーズ一覧 -->
+            <div id="series-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14"></div>
 
-                <div class="bg-[#0B0B0C] border border-[#232326] rounded-xl p-6 flex flex-col justify-between hover:border-red-600 transition">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="bg-emerald-950 text-emerald-400 text-xs px-2 py-1 rounded font-bold">第13講 ｜ 実家片付け</span>
-                            <span class="text-gray-500 text-xs">¥500</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-white mb-2 hover:text-neon-red transition">
-                            <a href="【個別noteへのリンク】" target="_blank">溜め込む親の脳をハッキングして、喧嘩せずに荷物を捨てる心理誘導フレーズ</a>
-                        </h4>
-                        <p class="text-gray-400 text-xs line-clamp-3 leading-relaxed">
-                            「捨てる」を会話から追放し、親のOSに合わせた「譲る・活かす・守る」のコマンドで実家を空にせよ。
-                        </p>
-                    </div>
-                    <a href="【個別noteへのリンク】" target="_blank" class="mt-6 block w-full py-2 bg-zinc-800 text-center text-xs font-bold text-white rounded-lg hover:bg-zinc-700 transition">この講義をダウンロードする 🐍</a>
-                </div>
-
-                <div class="bg-[#0B0B0C] border border-[#232326] rounded-xl p-6 flex flex-col justify-between hover:border-red-600 transition">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="bg-red-950 text-red-400 text-xs px-2 py-1 rounded font-bold">第11講 ｜ 離婚サバイバル</span>
-                            <span class="text-gray-500 text-xs">¥500</span>
-                        </div>
-                        <h4 class="text-lg font-bold text-white mb-2 hover:text-neon-red transition">
-                            <a href="【個別noteへのリンク】" target="_blank">共有名義（50:50）という名の蟻地獄からスマートに脱出する不動産ハック</a>
-                        </h4>
-                        <p class="text-gray-400 text-xs line-clamp-3 leading-relaxed">
-                            ペアローン、権利割合のしがらみで「家が売れないから離婚できない」と絶望している羊さんへ。
-                        </p>
-                    </div>
-                    <a href="【個別noteへのリンク】" target="_blank" class="mt-6 block w-full py-2 bg-zinc-800 text-center text-xs font-bold text-white rounded-lg hover:bg-zinc-700 transition">この講義をダウンロードする 💋</a>
-                </div>
-            </div>
+            <!-- ピックアップ講義 -->
+            <h3 class="text-lg font-black text-white tracking-widest mb-6">🔥 PICK UP 講義</h3>
+            <div id="lectures-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
         </div>
     </section>
 
-    <!-- 💸 HIGH-TICKET AFFILIATE GATEWAY -->
-    <section id="affiliate" class="py-16 px-6 max-w-7xl mx-auto">
+    <!-- 🛡️ KURASHI-NAVI GATEWAY（旧アフィリ窓口 → 自社サイト導線） -->
+    <section id="tools" class="py-16 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-black text-white tracking-widest">『脱皮ラボ』公式・資産防衛一括窓口</h2>
-            <p class="text-gray-400 text-sm mt-2">他人の霧に騙されるな。客観的な「複数の数字」を手に入れ、マウント権を奪い取りなさい。</p>
+            <h2 class="text-3xl font-black text-white tracking-widest">『脱皮ラボ』公式・資産防衛ツール</h2>
+            <p class="text-gray-400 text-sm mt-2">講義で頭を武装したら、次は手を動かす番だ。姉妹サイト『暮らしナビ』に実戦ツールを配備してある。</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="bg-dark-card rounded-2xl p-8 border border-[#232326] flex flex-col justify-between relative overflow-hidden group">
-                <div class="absolute top-0 right-0 w-24 h-24 bg-red-600/10 rounded-full blur-2xl group-hover:bg-red-600/20 transition"></div>
+                <div class="absolute top-0 right-0 w-24 h-24 bg-emerald-600/10 rounded-full blur-2xl group-hover:bg-emerald-600/20 transition"></div>
                 <div>
-                    <span class="text-xs font-bold tracking-widest text-neon-red block mb-2">REAL ESTATE HACK</span>
-                    <h3 class="text-xl font-black text-white mb-4">遠方の空き家・共有名義の家を最速で現金化する</h3>
+                    <span class="text-xs font-bold tracking-widest text-emerald-400 block mb-2">MONEY TYPE SCAN</span>
+                    <h3 class="text-xl font-black text-white mb-4">60秒で、あなたの「資産タイプ」を丸裸にする</h3>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        1社の言い値に騙されず、複数の査定書を並べて「相場の座標」を確定させなさい。国が用意した3,000万円控除の特例には期限がある。動くなら、今だね。
+                        守るべきか、育てるべきか。7つの質問に答えるだけで、君のお金の戦い方が分類される。自分の型も知らずに戦場に出るのは、丸腰で敵陣に入るのと同じだよ。
                     </p>
                 </div>
-                <a href="【ここに不動産一括査定のアフィリエイトリンク】" target="_blank" class="w-full py-3 bg-snake-red text-center text-sm font-bold text-white rounded-xl transition shadow-lg">
-                    無料で不動産の「適正価値」をあぶり出す ＞
+                <a href="https://www.kurashi-navi.com/tools/shisan-shindan" target="_blank" rel="noopener" class="w-full py-3 bg-snake-red text-center text-sm font-bold text-white rounded-xl transition shadow-lg">
+                    無料で資産タイプ診断を受ける ＞
                 </a>
             </div>
 
             <div class="bg-dark-card rounded-2xl p-8 border border-[#232326] flex flex-col justify-between relative overflow-hidden group">
                 <div class="absolute top-0 right-0 w-24 h-24 bg-purple-600/10 rounded-full blur-2xl group-hover:bg-purple-600/20 transition"></div>
                 <div>
-                    <span class="text-xs font-bold tracking-widest text-purple-400 block mb-2">LEGAL DEFENSE</span>
-                    <h3 class="text-xl font-black text-white mb-4">遺産相続・離婚サバイバル専門の「プロの暴力」を配備する</h3>
+                    <span class="text-xs font-bold tracking-widest text-purple-400 block mb-2">LIFE DEFENSE PORTAL</span>
+                    <h3 class="text-xl font-black text-white mb-4">引っ越し・相続・介護。「困った」の一括対策室</h3>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        身内のドロドロした感情論や、夫のモラハラを正面から相手にするのは時間の無駄よ。弁護士の受任通知を滑り込ませた瞬間、ゲームはチェックメイトよ。
+                        感情論で消耗する前に、比較と相場という「客観的な数字」を手に入れなさい。暮らしの防衛線は、姉妹サイト『暮らしナビ』にまとめて配備してあるわ。
                     </p>
                 </div>
-                <a href="【ここに弁護士・士業相談の一括アフィリエイトリンク】" target="_blank" class="w-full py-3 bg-zinc-800 hover:bg-zinc-700 text-center text-sm font-bold text-white rounded-xl transition shadow-lg">
-                    相続・離婚の専門家を味方につける ＞
+                <a href="https://www.kurashi-navi.com" target="_blank" rel="noopener" class="w-full py-3 bg-zinc-800 hover:bg-zinc-700 text-center text-sm font-bold text-white rounded-xl transition shadow-lg">
+                    暮らしナビで対策をはじめる ＞
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ⚖️ LEGAL DEFENSE SECTION (運営者情報・法務防衛) -->
+    <!-- ⚖️ LEGAL DEFENSE SECTION -->
     <section class="py-12 bg-[#0B0B0C] px-6 border-t border-[#232326] text-gray-500 text-xs">
         <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
             <div>
@@ -246,14 +236,14 @@
                 <ul class="space-y-1.5">
                     <li><span class="text-gray-400">運営組織：</span> スネークラボ研究所（Survival Strategy Room）</li>
                     <li><span class="text-gray-400">最高責任者：</span> スネーク博士 ＆ スネーク女史</li>
-                    <li><span class="text-gray-400">業務内容：</span> 資産防衛ロジックの提供、情報ハッキングコンテンツの配信、占術統計データを用いた対人戦略の構築</li>
+                    <li><span class="text-gray-400">業務内容：</span> 資産防衛ロジックの提供、制度・契約リテラシー講義の配信、占術統計データを用いた対人戦略の解説</li>
                     <li><span class="text-gray-400">連絡先：</span> info@dappi-lab.com</li>
                 </ul>
             </div>
             <div>
                 <h5 class="text-white font-bold mb-3 tracking-widest text-sm">【免責事項・個人情報について】</h5>
                 <p class="leading-relaxed text-justify">
-                    当研究所（脱皮ラボ）で提供する情報や、各種アフィリエイト窓口の利用については、すべて閲覧者ご自身の責任においてご判断ください。当研究所のロジックを用いて発生したいかなる不利益、トラブルについても、当研究所および運営元は一切の責任を負いかねます。古い皮を脱ぎ捨てる覚悟と責任は、常に君自身の手の中にあるのだよ 🐍
+                    当研究所（脱皮ラボ）で提供する情報は一般的な制度・知識の解説であり、法律・税務・投資に関する個別の助言ではありません。実際の判断にあたっては弁護士・税理士等の専門家にご相談ください。当研究所のロジックを用いて発生したいかなる不利益、トラブルについても、当研究所および運営元は一切の責任を負いかねます。古い皮を脱ぎ捨てる覚悟と責任は、常に君自身の手の中にあるのだよ 🐍
                 </p>
             </div>
         </div>
@@ -267,6 +257,119 @@
             <a href="privacy.html" class="hover:underline hover:text-gray-300 transition text-gray-400 font-bold">プライバシーポリシー</a>
         </p>
     </footer>
+
+<script>
+/* ---------- CONFIGを読んで描画（ここから下は触らなくてOK） ---------- */
+const el = (tag, cls, html) => {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (html !== undefined) e.innerHTML = html;
+  return e;
+};
+const esc = (s) => s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* noteバナー */
+if (CONFIG.noteProfile) {
+  document.getElementById("note-banner").classList.remove("hidden");
+  document.getElementById("note-banner-link").href = CONFIG.noteProfile;
+}
+
+/* パック */
+const packsRoot = document.getElementById("packs");
+CONFIG.packs.forEach(p => {
+  const live = !!p.url;
+  const frame = el("div", `flex-1 p-0.5 bg-gradient-to-r ${p.frame} rounded-xl shadow-2xl ${live ? "" : "coming-soon"}`);
+  const inner = live
+    ? el("a", "block h-full py-4 px-4 bg-[#141416] rounded-lg text-center hover:bg-[#1a1a1d] transition group")
+    : el("div", "block h-full py-4 px-4 bg-[#141416] rounded-lg text-center");
+  if (live) { inner.href = p.url; inner.target = "_blank"; inner.rel = "noopener"; }
+  inner.innerHTML = `
+    <span class="text-[10px] ${p.badgeColor} font-bold tracking-widest block mb-1">${esc(p.badge)}</span>
+    <span class="text-white font-black text-sm md:text-base">${esc(p.title)}</span>
+    <span class="block text-gray-400 text-xs mt-1">${esc(p.sub)}</span>
+    ${live ? "" : '<span class="inline-block mt-2 badge-soon text-[10px] font-bold px-2 py-0.5 rounded">COMING SOON</span>'}`;
+  frame.appendChild(inner);
+  packsRoot.appendChild(frame);
+});
+
+/* YouTubeセクション（チャンネルURLか動画URLが1本でもあれば表示） */
+const liveShorts = CONFIG.shorts.filter(s => s.url);
+if (CONFIG.youtubeChannel || liveShorts.length > 0) {
+  document.getElementById("youtube").classList.remove("hidden");
+  if (CONFIG.youtubeChannel) {
+    const b = document.getElementById("youtube-channel-btn");
+    b.classList.remove("hidden");
+    b.href = CONFIG.youtubeChannel;
+  }
+  const grid = document.getElementById("shorts-grid");
+  (liveShorts.length ? liveShorts : CONFIG.shorts).forEach(s => {
+    const live = !!s.url;
+    const card = el("div", `bg-dark-card rounded-xl p-4 flex flex-col justify-between ${live ? "" : "coming-soon"}`);
+    card.innerHTML = `
+      <div class="aspect-video bg-zinc-900 rounded-lg mb-4 flex items-center justify-center border border-zinc-800 relative overflow-hidden">
+        <div class="w-12 h-12 rounded-full bg-snake-red flex items-center justify-center relative z-10 shadow-lg">
+          <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+      </div>
+      <div>
+        <span class="text-xs font-bold ${s.color}">${esc(s.series)}</span>
+        <h3 class="text-base font-bold text-white mt-1 mb-2">${esc(s.title)}</h3>
+        ${live ? `<a href="${s.url}" target="_blank" rel="noopener" class="text-xs text-neon-red font-bold hover:underline">動画を見る 🎥</a>`
+               : '<span class="badge-soon text-[10px] font-bold px-2 py-0.5 rounded">COMING SOON</span>'}
+      </div>`;
+    grid.appendChild(card);
+  });
+} else {
+  document.getElementById("nav-youtube").classList.add("hidden");
+}
+
+/* シリーズ棚 */
+const seriesColor = {
+  emerald: ["bg-emerald-950 text-emerald-400 border-emerald-800", "hover:border-emerald-600"],
+  red: ["bg-red-950 text-red-400 border-red-800", "hover:border-red-600"],
+  purple: ["bg-purple-950 text-purple-400 border-purple-800", "hover:border-purple-600"],
+  amber: ["bg-amber-950 text-amber-400 border-amber-800", "hover:border-amber-600"],
+  sky: ["bg-sky-950 text-sky-400 border-sky-800", "hover:border-sky-600"],
+};
+const seriesRoot = document.getElementById("series-grid");
+CONFIG.series.forEach(sr => {
+  const live = !!sr.url;
+  const [tagCls, hoverCls] = seriesColor[sr.color] || seriesColor.emerald;
+  const card = el("div", `bg-[#0B0B0C] border border-[#232326] rounded-xl p-6 flex flex-col justify-between transition ${live ? hoverCls : ""}`);
+  card.innerHTML = `
+    <div>
+      <div class="flex justify-between items-center mb-3">
+        <span class="${tagCls} border text-xs px-2 py-1 rounded font-bold">${sr.emoji} ${esc(sr.name)}</span>
+        <span class="text-gray-500 text-xs">${esc(sr.range)}</span>
+      </div>
+      <p class="text-gray-400 text-xs leading-relaxed">${esc(sr.desc)}</p>
+    </div>
+    ${live
+      ? `<a href="${sr.url}" target="_blank" rel="noopener" class="mt-5 block w-full py-2 bg-zinc-800 text-center text-xs font-bold text-white rounded-lg hover:bg-zinc-700 transition">このシリーズを見る ＞</a>`
+      : `<div class="mt-5 text-center"><span class="badge-soon text-[10px] font-bold px-3 py-1 rounded inline-block">COMING SOON</span></div>`}`;
+  seriesRoot.appendChild(card);
+});
+
+/* ピックアップ講義 */
+const lecRoot = document.getElementById("lectures-grid");
+CONFIG.lectures.forEach(l => {
+  const live = !!l.url;
+  const card = el("div", `bg-[#0B0B0C] border border-[#232326] rounded-xl p-6 flex flex-col justify-between hover:border-red-600 transition ${live ? "" : "coming-soon"}`);
+  card.innerHTML = `
+    <div>
+      <div class="flex justify-between items-center mb-4">
+        <span class="${l.tagClass} text-xs px-2 py-1 rounded font-bold">${esc(l.no)} ｜ ${esc(l.tag)}</span>
+        <span class="text-gray-500 text-xs">${esc(l.price)}</span>
+      </div>
+      <h4 class="text-lg font-bold text-white mb-2">${live ? `<a href="${l.url}" target="_blank" rel="noopener" class="hover:text-neon-red transition">${esc(l.title)}</a>` : esc(l.title)}</h4>
+      <p class="text-gray-400 text-xs line-clamp-3 leading-relaxed">${esc(l.desc)}</p>
+    </div>
+    ${live
+      ? `<a href="${l.url}" target="_blank" rel="noopener" class="mt-6 block w-full py-2 bg-zinc-800 text-center text-xs font-bold text-white rounded-lg hover:bg-zinc-700 transition">${esc(l.cta)}</a>`
+      : `<div class="mt-6 text-center"><span class="badge-soon text-[10px] font-bold px-3 py-1 rounded inline-block">COMING SOON</span></div>`}`;
+  lecRoot.appendChild(card);
+});
+</script>
 
 </body>
 </html>
