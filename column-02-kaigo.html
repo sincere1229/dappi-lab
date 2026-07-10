@@ -1,0 +1,120 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>在宅限界を見極める：特養の入所スコアとブリッジ施設のサバイバル経済学｜脱皮ラボ</title>
+<meta name="description" content="特養は先着順ではなくスコア順。介護離職を避け、民間ブリッジ施設を二段構えで使い倒す実務を解説。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#e7e5e4;--ink-dim:#9aa0a6;--void:#05060a;--panel:#0a0d14;--panel2:#0e131c;--blood:#e11d2a;--blood-hot:#ff2d3d;--hair:rgba(225,29,42,.22);--grid:rgba(225,29,42,.05);--f-display:'Shippori Mincho B1',serif;--f-body:'Noto Sans JP',system-ui,sans-serif;--f-mono:'JetBrains Mono',ui-monospace,monospace;}
+*{box-sizing:border-box;}
+body{margin:0;color:var(--ink);font-family:var(--f-body);line-height:1.9;letter-spacing:.01em;background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/100% 34px,radial-gradient(1200px 600px at 80% -10%,rgba(225,29,42,.10),transparent 60%),var(--void);}
+::selection{background:var(--blood);color:#fff;}
+.wrap{max-width:760px;margin:0 auto;padding:clamp(16px,4vw,40px) clamp(14px,4vw,28px) 80px;}
+.mono{font-family:var(--f-mono);}
+.eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.28em;color:var(--blood);text-transform:uppercase;}
+h1{font-family:var(--f-display);font-weight:800;color:#fff;font-size:clamp(24px,5vw,40px);line-height:1.4;margin:0;}
+h2{font-family:var(--f-display);font-weight:800;font-size:clamp(20px,3.4vw,29px);line-height:1.45;color:#fff;margin:2.6em 0 .9em;padding-left:.85em;position:relative;}
+h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:4px;background:var(--blood);box-shadow:0 0 12px var(--blood-hot);}
+h3{font-family:var(--f-display);font-weight:600;font-size:clamp(16px,2.4vw,20px);color:#fde8ea;margin:2em 0 .6em;}
+h3::before{content:"\25E4 ";color:var(--blood);font-size:.8em;}
+.lead{font-size:clamp(15px,2vw,17px);color:#f5f3f2;border-left:1px solid var(--hair);padding-left:1em;margin:1.4em 0;}
+p{margin:1.15em 0;}
+strong{color:#fff;font-weight:700;text-shadow:0 0 1px rgba(225,29,42,.5);border-bottom:1px solid var(--hair);padding-bottom:1px;}
+.list{list-style:none;margin:1.2em 0;padding:0;}
+.list>li{position:relative;padding:.35em 0 .35em 1.7em;border-bottom:1px dashed rgba(255,255,255,.06);}
+.list>li::before{content:"\25B8";position:absolute;left:.2em;top:.35em;color:var(--blood);font-family:var(--f-mono);}
+.twrap{margin:1.6em 0;overflow-x:auto;border:1px solid var(--hair);border-radius:2px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px;}
+th{background:linear-gradient(180deg,#14000a,#0a0d14);color:var(--blood);font-family:var(--f-mono);font-weight:700;text-align:left;padding:.7em .9em;letter-spacing:.06em;border-bottom:1px solid var(--blood);white-space:nowrap;}
+td{padding:.7em .9em;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top;}
+tr:last-child td{border-bottom:none;} tr:hover td{background:rgba(225,29,42,.05);}
+.quote{position:relative;margin:1.8em 0;padding:1.1em 1.2em 1.1em 1.4em;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--blood);border-radius:2px;box-shadow:inset 0 0 40px rgba(225,29,42,.05);}
+.quote::before{content:"\5973\53F2\306E\6240\898B // \1F4AC";position:absolute;top:-.75em;left:1em;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:var(--blood);background:var(--void);padding:0 .5em;}
+.quote p{margin:.3em 0;font-size:15px;color:#fbeaec;}
+.frame{position:relative;background:linear-gradient(180deg,rgba(10,13,20,.9),rgba(5,6,10,.9));border:1px solid var(--hair);}
+.corner{position:absolute;width:14px;height:14px;border:2px solid var(--blood);box-shadow:0 0 8px var(--blood-hot);}
+.tl{top:-1px;left:-1px;border-right:none;border-bottom:none;} .tr{top:-1px;right:-1px;border-left:none;border-bottom:none;}
+.bl{bottom:-1px;left:-1px;border-right:none;border-top:none;} .br{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blood-hot);box-shadow:0 0 8px var(--blood-hot);animation:blink 1.6s steps(1) infinite;}
+@keyframes blink{0%,60%{opacity:1}61%,100%{opacity:.25}}
+.cta{position:relative;margin:2.6em 0 1em;padding:1.8em 1.4em;background:radial-gradient(120% 140% at 50% 0%,rgba(225,29,42,.16),transparent 60%),var(--panel2);border:1px solid var(--blood);border-radius:3px;box-shadow:0 0 0 1px rgba(225,29,42,.15),0 0 40px rgba(225,29,42,.12);}
+.cta-eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.26em;color:var(--blood);}
+.cta-title{font-family:var(--f-display);font-weight:800;color:#fff;font-size:clamp(18px,2.6vw,23px);margin:.4em 0 .5em;}
+.btn{display:inline-flex;align-items:center;gap:.6em;margin-top:1em;font-family:var(--f-mono);font-weight:700;font-size:15px;letter-spacing:.04em;color:#fff;text-decoration:none;padding:.85em 1.8em;border-radius:2px;background:linear-gradient(180deg,var(--blood-hot),var(--blood));border:1px solid #ff6470;box-shadow:0 0 18px rgba(225,29,42,.35);transition:box-shadow .2s,transform .1s,filter .2s;}
+.btn:hover{box-shadow:0 0 34px rgba(255,45,61,.75);filter:brightness(1.12);transform:translateY(-1px);}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:3px;}
+.shelf-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;color:var(--ink-dim);margin:1.8em 0 .7em;}
+.shelf{display:grid;gap:.8em;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:.4em 0 1.6em;}
+.card{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:3px;overflow:hidden;transition:border-color .2s,box-shadow .2s,transform .1s;}
+.card:hover{border-color:var(--blood);box-shadow:0 0 22px rgba(225,29,42,.28);transform:translateY(-2px);}
+.thumb{aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#0e131c,#0e131c 8px,#0a0d14 8px,#0a0d14 16px);display:flex;align-items:center;justify-content:center;color:rgba(225,29,42,.5);font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;}
+.cbody{padding:.7em .8em;flex:1;display:flex;flex-direction:column;gap:.5em;}
+.cname{font-size:13px;line-height:1.5;color:#f5f3f2;} .cbuy{margin-top:auto;font-family:var(--f-mono);font-size:11px;font-weight:700;color:var(--blood);letter-spacing:.06em;}
+.card:hover .cbuy{color:var(--blood-hot);text-shadow:0 0 8px rgba(255,45,61,.6);}
+.inline{color:var(--blood);text-decoration:none;font-weight:700;border-bottom:1px solid var(--blood);padding:0 1px;transition:.2s;}
+.inline:hover{color:#fff;background:var(--blood);}
+.byline{display:flex;align-items:center;gap:12px;padding:10px 0 22px;border-bottom:1px solid var(--hair);margin-bottom:20px;}
+.avatar{width:46px;height:46px;border-radius:50%;border:1px solid var(--blood);box-shadow:0 0 14px rgba(225,29,42,.4);object-fit:cover;background:#0a0d14;}
+hr{border:0;border-top:1px solid var(--hair);margin:2.2em 0;}
+@media (prefers-reduced-motion:reduce){.dot{animation:none;}}
+</style></head>
+<body><div class="wrap">
+<div class="frame" style="padding:10px 14px;margin-bottom:26px;">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<div class="mono" style="display:flex;flex-wrap:wrap;gap:6px 18px;font-size:11px;letter-spacing:.12em;color:var(--ink-dim);">
+<span style="color:var(--blood)">脱皮ラボ // DOSSIER</span><span>症例番号：No.02</span><span>分類：介護・施設編</span>
+<span>危険度：<span style="color:var(--blood-hot)">介護離職・共倒れ</span></span>
+<span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;"><span class="dot"></span> 執刀：女史</span></div></div>
+<header style="margin-bottom:30px;">
+<div class="eyebrow" style="margin-bottom:12px;">脱皮案件 // 綺麗事、剥がします</div>
+<h1>在宅限界を見極める：特養の入所スコアとブリッジ施設のサバイバル経済学</h1>
+<p style="color:var(--ink-dim);margin-top:14px;font-size:15px;">特別養護老人ホームの入所基準スコアと、民間ブリッジ施設を賢く併用する技術</p></header>
+<div class="byline"><img class="avatar" src="snake-joshi.png" alt="スネーク女史">
+<div><div style="font-family:var(--f-display);color:#fff;font-weight:600;">スネーク女史 <span style="color:var(--blood)">💋</span></div>
+<div class="mono" style="font-size:11px;color:var(--ink-dim);letter-spacing:.1em;">白蛇のキャリアウーマン｜生存戦略室</div></div></div>
+
+<p class="lead">親の老いに直面したとき、多くの人が「実の親なんだから自分が看るべきだ」という古い呪いに囚われるわ。そして睡眠と仕事を削り、「介護うつ」「介護離職」という共倒れの穴に自ら落ちていくの。限界を迎える前に打つべき「プロへの業務委託」を、冷徹に解説するわ。</p>
+
+<h2>1. 特養「数百人待ち」の正体と、選考基準の仕様</h2>
+<p>「特養は300名待ちだから5年は入れない」——役所でそう言われて絶望した？ その計算、根本から間違っているわ。特養の入所は<strong>申し込み順（早い者勝ち）ではなく、「緊急度・必要性のスコア順」</strong>だからよ。委員会は待機者全員を、毎月スコア順に並び替えているの。</p>
+<ul class="list">
+<li><strong>本人の要介護度</strong>：要介護4・5は高得点。3と5では話がまるで違う。</li>
+<li><strong>介護者の状況</strong>：独居、老老介護、介護者の病気、そして「就労しているか」。</li>
+<li><strong>在宅介護の限界度</strong>：サービスを限界まで使っても回っていない事実。</li>
+</ul>
+<p>つまり、「なんとか家族でやれています」と遠慮がちに過少申告する真面目な家族ほど、スコア上は<strong>「緊急度：低」</strong>と翻訳され、後から「限界を1点も漏らさず書いた家族」に延々とごぼう抜きされ続けるのよ。</p>
+
+<h2>2. 介護離職は最悪の決算エラー。プロの布陣へ「業務委託」しなさい</h2>
+<p>年間約10万人とも言われる介護離職。仕事を辞めて密室で親と二人きりになれば、<strong>収入と社会接点を同時に失う致命的な損失</strong>を招くだけよ。沈みかけた船を素人が抱きかかえて泳げば、二人とも沈むわ。</p>
+<p>あなたの役割は、排泄や感情の波に対応する<strong>プレイヤー（労働者）</strong>になることじゃない。ケアプランを承認し、施設や費用を決める<strong>「チームの司令塔（監督）」</strong>として振る舞うこと。実務はプロの布陣（施設・ケアマネ）に業務委託するのが、最も誠実なリスクマネジメントよ。</p>
+<blockquote class="quote"><p>心の距離を置くことは冷酷ではなく、お互いが生き残るための<strong>「安全装置」</strong>なのよ。</p></blockquote>
+
+<h2>3. 待機期間を生き抜く「民間ブリッジ施設」二段構え戦略</h2>
+<p>スコアを正しく満額申告しても、物理的な空きまで数ヶ月のタイムラグが出ることはあるわ。その間にあなた自身が壊れないための、一時避難所（ブリッジ）の設計図がこれ。</p>
+<div class="twrap"><table>
+<thead><tr><th>施設タイプ</th><th>月額の目安</th><th>サバイバル的活用法</th></tr></thead>
+<tbody>
+<tr><td><strong>本命</strong>：特別養護老人ホーム</td><td>月10万円前後〜（負担軽減時）</td><td>負担が最も少ない最終目的地。申し込んだまま順番を待つ。</td></tr>
+<tr><td><strong>避難所</strong>：サ高住・住宅型有料（格安帯）</td><td>月15〜20万円程度〜（地域差）</td><td>即入居可。特養の順番が来るまでの「仮住まい」と割り切る。</td></tr>
+</tbody></table></div>
+<p>差額の月数万円で買えるのは、あなたの<strong>夜間の睡眠、仕事、家庭の平和、そして親の安全</strong>よ。「入居一時金ゼロ・敷金型」を選び、特養の順番が来たら住み替える。この二段構えを安全地帯から回すの。</p>
+
+<h2>本書のまとめ：在宅限界のサバイバル</h2>
+<ul class="list">
+<li>特養の行列は先着順ではない。<strong>言語化された「緊急度のリーグ表」</strong>である。</li>
+<li>書類には形容詞（大変です）を捨て、<strong>数字（夜間介助2〜3回、8ヶ月継続）と診断書</strong>で語れ。</li>
+<li>待ち期間は、<strong>入居一時金0円の民間施設</strong>を一時避難所として使い倒せ。</li>
+</ul>
+<blockquote class="quote"><p>あなたが正常に稼働し、仕事を守り、笑って眠れていること——それこそが、親が人生を懸けて作りたかった最高の「作品」なのだから、それを壊しなさんな。<strong>他人の目を気にする不自由な皮なんて、さっさと脱皮してラクになりなさい。</strong></p></blockquote>
+<hr>
+<section class="cta"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<div class="cta-eyebrow">▶ 脱出ゲート // 全国老人ホーム・施設案内デスク</div>
+<div class="cta-title">罪悪感を持たず、自分の人生を守りなさい。</div>
+<div style="color:var(--ink);font-size:15px;">親の年金予算や状況に合わせた優良な受け皿（入居金０円・即入居可）を一括検索・無料相談できる窓口。まずは情報という盾を揃えなさい。</div>
+<a class="btn" href="#AFFI:もしも_LIFULL介護" target="_blank" rel="sponsored noopener noreferrer">優良施設を一括検索・無料相談 →</a>
+<p class="mono" style="font-size:10px;color:var(--ink-dim);margin-top:.9em;letter-spacing:.08em;">※ 本デスクはアフィリエイトプログラムを利用しています</p></section>
+<footer class="mono" style="margin-top:60px;padding-top:20px;border-top:1px solid var(--hair);font-size:11px;color:var(--ink-dim);letter-spacing:.08em;line-height:2;">
+<div>脱皮ラボ｜TWINKLE LAB 🐣 ― AI×人生の綺麗事を、剥がすメディア</div>
+<div>© Twinkle Lab / ASlink. 本コラムは一般的な情報提供です。専門的判断は各分野の専門家へご相談ください。</div>
+<div style="margin-top:6px;"><a href="index.html" style="color:var(--ink-dim);">脱皮ラボ トップ</a> ／ <a href="privacy.html" style="color:var(--ink-dim);">プライバシーポリシー</a></div></footer>
+</div></body></html>

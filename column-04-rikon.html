@@ -1,0 +1,115 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>資産を守るリーガルマインド：特有財産の立証と、民事執行法改正による口座開示手続｜脱皮ラボ</title>
+<meta name="description" content="財産分与における特有財産の立証責任と、2020年以降の民事執行法改正による合法的な口座開示手続の基本を解説。">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Noto+Sans+JP:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#e7e5e4;--ink-dim:#9aa0a6;--void:#05060a;--panel:#0a0d14;--panel2:#0e131c;--blood:#e11d2a;--blood-hot:#ff2d3d;--hair:rgba(225,29,42,.22);--grid:rgba(225,29,42,.05);--f-display:'Shippori Mincho B1',serif;--f-body:'Noto Sans JP',system-ui,sans-serif;--f-mono:'JetBrains Mono',ui-monospace,monospace;}
+*{box-sizing:border-box;}
+body{margin:0;color:var(--ink);font-family:var(--f-body);line-height:1.9;letter-spacing:.01em;background:linear-gradient(var(--grid) 1px,transparent 1px) 0 0/100% 34px,radial-gradient(1200px 600px at 80% -10%,rgba(225,29,42,.10),transparent 60%),var(--void);}
+::selection{background:var(--blood);color:#fff;}
+.wrap{max-width:760px;margin:0 auto;padding:clamp(16px,4vw,40px) clamp(14px,4vw,28px) 80px;}
+.mono{font-family:var(--f-mono);}
+.eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.28em;color:var(--blood);text-transform:uppercase;}
+h1{font-family:var(--f-display);font-weight:800;color:#fff;font-size:clamp(24px,5vw,40px);line-height:1.4;margin:0;}
+h2{font-family:var(--f-display);font-weight:800;font-size:clamp(20px,3.4vw,29px);line-height:1.45;color:#fff;margin:2.6em 0 .9em;padding-left:.85em;position:relative;}
+h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:4px;background:var(--blood);box-shadow:0 0 12px var(--blood-hot);}
+h3{font-family:var(--f-display);font-weight:600;font-size:clamp(16px,2.4vw,20px);color:#fde8ea;margin:2em 0 .6em;}
+h3::before{content:"\25E4 ";color:var(--blood);font-size:.8em;}
+.lead{font-size:clamp(15px,2vw,17px);color:#f5f3f2;border-left:1px solid var(--hair);padding-left:1em;margin:1.4em 0;}
+p{margin:1.15em 0;}
+strong{color:#fff;font-weight:700;text-shadow:0 0 1px rgba(225,29,42,.5);border-bottom:1px solid var(--hair);padding-bottom:1px;}
+.list{list-style:none;margin:1.2em 0;padding:0;}
+.list>li{position:relative;padding:.35em 0 .35em 1.7em;border-bottom:1px dashed rgba(255,255,255,.06);}
+.list>li::before{content:"\25B8";position:absolute;left:.2em;top:.35em;color:var(--blood);font-family:var(--f-mono);}
+.twrap{margin:1.6em 0;overflow-x:auto;border:1px solid var(--hair);border-radius:2px;}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:420px;}
+th{background:linear-gradient(180deg,#14000a,#0a0d14);color:var(--blood);font-family:var(--f-mono);font-weight:700;text-align:left;padding:.7em .9em;letter-spacing:.06em;border-bottom:1px solid var(--blood);white-space:nowrap;}
+td{padding:.7em .9em;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top;}
+tr:last-child td{border-bottom:none;} tr:hover td{background:rgba(225,29,42,.05);}
+.quote{position:relative;margin:1.8em 0;padding:1.1em 1.2em 1.1em 1.4em;background:var(--panel);border:1px solid var(--hair);border-left:3px solid var(--blood);border-radius:2px;box-shadow:inset 0 0 40px rgba(225,29,42,.05);}
+.quote::before{content:"\5973\53F2\306E\6240\898B // \1F4AC";position:absolute;top:-.75em;left:1em;font-family:var(--f-mono);font-size:10px;letter-spacing:.2em;color:var(--blood);background:var(--void);padding:0 .5em;}
+.quote p{margin:.3em 0;font-size:15px;color:#fbeaec;}
+.frame{position:relative;background:linear-gradient(180deg,rgba(10,13,20,.9),rgba(5,6,10,.9));border:1px solid var(--hair);}
+.corner{position:absolute;width:14px;height:14px;border:2px solid var(--blood);box-shadow:0 0 8px var(--blood-hot);}
+.tl{top:-1px;left:-1px;border-right:none;border-bottom:none;} .tr{top:-1px;right:-1px;border-left:none;border-bottom:none;}
+.bl{bottom:-1px;left:-1px;border-right:none;border-top:none;} .br{bottom:-1px;right:-1px;border-left:none;border-top:none;}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--blood-hot);box-shadow:0 0 8px var(--blood-hot);animation:blink 1.6s steps(1) infinite;}
+@keyframes blink{0%,60%{opacity:1}61%,100%{opacity:.25}}
+.cta{position:relative;margin:2.6em 0 1em;padding:1.8em 1.4em;background:radial-gradient(120% 140% at 50% 0%,rgba(225,29,42,.16),transparent 60%),var(--panel2);border:1px solid var(--blood);border-radius:3px;box-shadow:0 0 0 1px rgba(225,29,42,.15),0 0 40px rgba(225,29,42,.12);}
+.cta-eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.26em;color:var(--blood);}
+.cta-title{font-family:var(--f-display);font-weight:800;color:#fff;font-size:clamp(18px,2.6vw,23px);margin:.4em 0 .5em;}
+.btn{display:inline-flex;align-items:center;gap:.6em;margin-top:1em;font-family:var(--f-mono);font-weight:700;font-size:15px;letter-spacing:.04em;color:#fff;text-decoration:none;padding:.85em 1.8em;border-radius:2px;background:linear-gradient(180deg,var(--blood-hot),var(--blood));border:1px solid #ff6470;box-shadow:0 0 18px rgba(225,29,42,.35);transition:box-shadow .2s,transform .1s,filter .2s;}
+.btn:hover{box-shadow:0 0 34px rgba(255,45,61,.75);filter:brightness(1.12);transform:translateY(-1px);}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:3px;}
+.shelf-label{font-family:var(--f-mono);font-size:11px;letter-spacing:.22em;color:var(--ink-dim);margin:1.8em 0 .7em;}
+.shelf{display:grid;gap:.8em;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin:.4em 0 1.6em;}
+.card{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:3px;overflow:hidden;transition:border-color .2s,box-shadow .2s,transform .1s;}
+.card:hover{border-color:var(--blood);box-shadow:0 0 22px rgba(225,29,42,.28);transform:translateY(-2px);}
+.thumb{aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#0e131c,#0e131c 8px,#0a0d14 8px,#0a0d14 16px);display:flex;align-items:center;justify-content:center;color:rgba(225,29,42,.5);font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;}
+.cbody{padding:.7em .8em;flex:1;display:flex;flex-direction:column;gap:.5em;}
+.cname{font-size:13px;line-height:1.5;color:#f5f3f2;} .cbuy{margin-top:auto;font-family:var(--f-mono);font-size:11px;font-weight:700;color:var(--blood);letter-spacing:.06em;}
+.card:hover .cbuy{color:var(--blood-hot);text-shadow:0 0 8px rgba(255,45,61,.6);}
+.inline{color:var(--blood);text-decoration:none;font-weight:700;border-bottom:1px solid var(--blood);padding:0 1px;transition:.2s;}
+.inline:hover{color:#fff;background:var(--blood);}
+.byline{display:flex;align-items:center;gap:12px;padding:10px 0 22px;border-bottom:1px solid var(--hair);margin-bottom:20px;}
+.avatar{width:46px;height:46px;border-radius:50%;border:1px solid var(--blood);box-shadow:0 0 14px rgba(225,29,42,.4);object-fit:cover;background:#0a0d14;}
+hr{border:0;border-top:1px solid var(--hair);margin:2.2em 0;}
+@media (prefers-reduced-motion:reduce){.dot{animation:none;}}
+</style></head>
+<body><div class="wrap">
+<div class="frame" style="padding:10px 14px;margin-bottom:26px;">
+<span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<div class="mono" style="display:flex;flex-wrap:wrap;gap:6px 18px;font-size:11px;letter-spacing:.12em;color:var(--ink-dim);">
+<span style="color:var(--blood)">脱皮ラボ // DOSSIER</span><span>症例番号：No.04</span><span>分類：離婚法務・資産</span>
+<span>危険度：<span style="color:var(--blood-hot)">資産隠し・泣き寝入り</span></span>
+<span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;"><span class="dot"></span> 執刀：女史</span></div></div>
+<header style="margin-bottom:30px;">
+<div class="eyebrow" style="margin-bottom:12px;">脱皮案件 // 綺麗事、剥がします</div>
+<h1>資産を守るリーガルマインド：特有財産の立証と、民事執行法改正による口座開示手続</h1>
+<p style="color:var(--ink-dim);margin-top:14px;font-size:15px;">財産分与における特有財産の立証責任と、民事執行法改正による隠し口座開示手続の基本</p></header>
+<div class="byline"><img class="avatar" src="snake-joshi.png" alt="スネーク女史">
+<div><div style="font-family:var(--f-display);color:#fff;font-weight:600;">スネーク女史 <span style="color:var(--blood)">💋</span></div>
+<div class="mono" style="font-size:11px;color:var(--ink-dim);letter-spacing:.1em;">白蛇のキャリアウーマン｜生存戦略室</div></div></div>
+
+<p class="lead">パートナーとの関係に終止符を打ち、人生の再スタートを決意したとき、多くの女性が「話し合い」や「お気持ち」という最も脆い道具で交渉に臨もうとするわ。でも離婚の実務であなたの平穏を担保するのは、感情ではなく冷徹な<strong>「リーガルマインド」と「数字」</strong>だけよ。</p>
+
+<h2>1. 「隠し得」の時代は終わった。2020年民事執行法改正による厳罰化</h2>
+<p>財産分与で最もトラブルを生むのが<strong>相手の資産隠し</strong>。表の口座だけ見せて「これが全財産だ」と言い張り、ネット銀行やスマホ決済の奥に資産を沈める——かつての制度は無力だったわ。でも2020年の民事執行法改正で、仕様は劇的に牙を剥いたの。</p>
+<ul class="list">
+<li><strong>財産開示手続の厳罰化</strong>：かつては無視や虚偽陳述でも「3万円以下の過料」というおままごと。改正後は、正当な理由なく拒絶・虚偽開示をすると<strong>「6ヶ月以下の懲役または50万円以下の罰金」という刑事罰</strong>の対象に。</li>
+<li><strong>第三者からの情報取得手続の新設</strong>：裁判所を通じ、金融機関や公的機関から<strong>相手の口座残高や勤務先を強制的に開示</strong>させられる。相手の「口座なんてない」という嘘を、国家の力で上書きする仕組みよ。</li>
+</ul>
+
+<h2>2. 不正アクセスは即退場。「合法的な手掛かり」の収集実務</h2>
+<p>どれほど疑わしくても、夫のスマホやPCにパスワードを無断入力してログインする行為は<strong>「不正アクセス禁止法違反」という立派な犯罪</strong>。あなたが加害者になれば全戦略が崩壊するわ。あなたがやるべきは、合法的な範囲で「金融機関名と支店名」という点を集めること。</p>
+<ul class="list">
+<li><strong>家計口座の取引履歴</strong>：共有口座からネット銀行や証券会社への、使途不明な定期送金（これが矢印になる）。</li>
+<li><strong>ポストに届く公的書類</strong>：自宅に届く残高報告書やハガキの差出人名のチェック。</li>
+<li><strong>弁護士会照会（23条照会）</strong>：弁護士が職権で行う公的な照会手続き。</li>
+</ul>
+<p>これらを盾に、相手へ<strong>「隠し通すか、前科者になるか」の電卓</strong>を叩かせるのよ。</p>
+<p>そして、集めた点を時系列でまとめる作業は、感情の愚痴ではなく「裁判官が読める証拠」に翻訳する工程。実務書1冊を手元に置き、集めた情報は<strong>鍵付きで物理的に守る</strong>のが基本よ。</p>
+<div class="shelf-label">▸ 証拠防衛の武器（楽天）</div><div class="shelf"><a class="card" href="#AFFI:楽天_民事執行法" target="_blank" rel="sponsored noopener noreferrer"><div class="thumb">NO IMAGE</div><div class="cbody"><span class="cname">民事執行法の実務解説本（制度を自分の盾にする）</span><span class="cbuy">楽天で見る ▸</span></div></a><a class="card" href="#AFFI:楽天_鍵付ファイル" target="_blank" rel="sponsored noopener noreferrer"><div class="thumb">NO IMAGE</div><div class="cbody"><span class="cname">鍵付き個人情報保護ファイル（証拠を物理的に守る）</span><span class="cbuy">楽天で見る ▸</span></div></a></div>
+<h2>3. あなたの「聖域」を守り抜く特有財産の防衛術</h2>
+<p>相手の裏資産を暴く一方で、あなたが結婚前から持っていた貯蓄や、実家から相続・贈与された資産（<strong>特有財産</strong>）は、財産分与の網から完全にプロテクトしなければならないわ。</p>
+<div class="twrap"><table>
+<thead><tr><th>資産の分類</th><th>財産分与の対象</th><th>防衛・立証の実務</th></tr></thead>
+<tbody>
+<tr><td>共有財産</td><td>対象（50:50）</td><td>婚姻中に夫婦の協力で築いた預貯金・家屋など。</td></tr>
+<tr><td>特有財産</td><td><strong>対象外（あなたの聖域）</strong></td><td>婚前の通帳、実家からの振込履歴、贈与契約書を独立管理し、生活費と「混ぜない」。</td></tr>
+</tbody></table></div>
+<blockquote class="quote"><p>「実家からの援助ということにしておこう」という<strong>実体のない仮装（嘘）</strong>は、裁判所でバレた瞬間に信用を地に落とす最悪の下策よ。真実を「足跡（振込履歴の書面）」で証明する。それだけで、あなたの聖域は誰にも崩せない城壁になるわ。</p></blockquote>
+<hr>
+<section class="cta"><span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+<div class="cta-eyebrow">▶ 脱出ゲート // 離婚法務・資産奪還案内デスク</div>
+<div class="cta-title">国家の法的手続を正確に発動させるには、専門家を背後に配置しなさい。</div>
+<div style="color:var(--ink);font-size:15px;">開示命令や情報取得手続を正確に使い、あなたの正当な財産を守り抜くには、資産問題の仕様を知り尽くした弁護士が不可欠。自宅から最も戦闘力の高いプロを比較・選定できる一括相談窓口で、最強の味方を手に入れなさい。</div>
+<a class="btn" href="#AFFI:もしも_弁護士相談" target="_blank" rel="sponsored noopener noreferrer">離婚・財産分与に強い弁護士一括相談 →</a>
+<p class="mono" style="font-size:10px;color:var(--ink-dim);margin-top:.9em;letter-spacing:.08em;">※ 本デスクはアフィリエイトプログラムを利用しています</p></section>
+<footer class="mono" style="margin-top:60px;padding-top:20px;border-top:1px solid var(--hair);font-size:11px;color:var(--ink-dim);letter-spacing:.08em;line-height:2;">
+<div>脱皮ラボ｜TWINKLE LAB 🐣 ― AI×人生の綺麗事を、剥がすメディア</div>
+<div>© Twinkle Lab / ASlink. 本コラムは一般的な情報提供です。専門的判断は各分野の専門家へご相談ください。</div>
+<div style="margin-top:6px;"><a href="index.html" style="color:var(--ink-dim);">脱皮ラボ トップ</a> ／ <a href="privacy.html" style="color:var(--ink-dim);">プライバシーポリシー</a></div></footer>
+</div></body></html>
