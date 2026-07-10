@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ ｜ 脱皮ラボ</title>
+    <meta name="robots" content="noindex">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0B0B0C; color: #F3F4F6; font-family: 'Helvetica Neue', Arial, sans-serif; }
+        .text-neon-red { color: #E50914; text-shadow: 0 0 10px rgba(229, 9, 20, 0.5); }
+        .bg-dark-card { background-color: #141416; border: 1px solid #232326; }
+        .bg-snake-red { background-color: #E50914; }
+        .bg-snake-red:hover { background-color: #B20710; }
+        input, textarea {
+            background: #0B0B0C; border: 1px solid #232326; color: #F3F4F6;
+            border-radius: 0.5rem; padding: 0.75rem 1rem; width: 100%; font-size: 14px;
+        }
+        input:focus, textarea:focus { outline: none; border-color: #E50914; box-shadow: 0 0 10px rgba(229,9,20,.2); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="w-full py-4 px-6 bg-[#0B0B0C] border-b border-[#232326]">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black tracking-widest text-white flex items-center gap-2">
+                <span class="text-neon-red">脱皮</span>LABO
+            </a>
+            <a href="index.html" class="text-sm font-medium text-gray-400 hover:text-white transition">← トップへ戻る</a>
+        </div>
+    </nav>
+
+    <main class="max-w-xl mx-auto px-6 py-16">
+        <h1 class="text-2xl font-black text-white tracking-wider mb-2">お問い合わせ</h1>
+        <p class="text-gray-400 text-sm mb-8 leading-relaxed">
+            研究所への連絡はこのフォームから。用件は簡潔に、感情論は抜きで頼むよ 🐍<br>
+            （返信が必要な場合は、届くメールアドレスを正しく書きなさい）
+        </p>
+
+        <!-- ★FormspreeのフォームIDは差し替え可能。現在はTwinkle Lab共通フォームを使用 -->
+        <form action="https://formspree.io/f/mvzlbwep" method="POST" class="bg-dark-card rounded-2xl p-8 space-y-5">
+            <input type="hidden" name="_subject" value="【脱皮ラボ】お問い合わせ">
+            <div>
+                <label class="block text-xs font-bold text-gray-400 mb-2 tracking-widest">お名前（ハンドル可）</label>
+                <input type="text" name="name" placeholder="例）羊山 太郎">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-gray-400 mb-2 tracking-widest">メールアドレス <span class="text-neon-red">*</span></label>
+                <input type="email" name="email" required placeholder="reply@example.com">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-gray-400 mb-2 tracking-widest">用件 <span class="text-neon-red">*</span></label>
+                <textarea name="message" rows="6" required placeholder="お問い合わせ内容"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3.5 bg-snake-red text-white font-black rounded-xl transition shadow-lg">
+                送信する 🐍
+            </button>
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+                ※ 個別の法律・税務・投資相談にはお答えできません。取材・お仕事のご依頼、記事内容の誤りのご指摘などにご利用ください。
+            </p>
+        </form>
+    </main>
+
+    <footer class="w-full py-8 bg-[#0B0B0C] border-t border-[#232326] text-center text-xs text-gray-500">
+        <p class="mb-2">© 2026 DAPPI LABO. All Rights Reserved.</p>
+        <p><a href="privacy.html" class="hover:underline text-gray-400 font-bold">プライバシーポリシー</a></p>
+    </footer>
+
+</body>
+</html>
