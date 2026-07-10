@@ -65,39 +65,51 @@ const CONFIG = {
 
   // シリーズ棚（マガジンor代表記事のURL。準備中はそのまま空で）
   series: [
-    { name: "生存戦略編", range: "第1〜20講", emoji: "🐍", color: "emerald",
-      desc: "実家・近所・親戚・マナー利権。日常に仕掛けられた同調圧力の罠を一つずつ解体する基礎講義。",
+    { name: "実家売却編", range: "第1〜5講", emoji: "🏚️", color: "amber",
+      desc: "本家プレッシャー、親族の反対、空き家の維持費と大増税。実家という重荷を、価値があるうちに次へ渡す実務。",
       url: "" },
-    { name: "相続サバイバル編", range: "第21〜25講", emoji: "⚔️", color: "red",
+    { name: "相続サバイバル編", range: "第6〜10講", emoji: "⚔️", color: "red",
       desc: "遺留分・使い込み・ハンコ代。血縁という名の戦場で、泣き寝入りせず取り分を守る実戦講義。",
       url: "" },
-    { name: "占い・人間ハッキング編", range: "第26〜30講", emoji: "🔮", color: "purple",
-      desc: "バーナム効果からコールドリーディングまで。占いのカラクリを暴き、対人戦略に転用する。",
+    { name: "疎遠な親族編", range: "第11〜14講", emoji: "🕸️", color: "sky",
+      desc: "何十年も会っていない親族の死、突然の相続放棄、連帯保証。「知らない身内」から自分を守る防衛線。",
       url: "" },
-    { name: "終活・渡す側編", range: "第35〜39講", emoji: "🕯️", color: "amber",
+    { name: "葬儀編", range: "第15〜19講", emoji: "🕯️", color: "emerald",
+      desc: "「一式」の罠、家族葬・直葬の適正価格。悲しみにつけ込む請求書から、財布と尊厳を守り抜く。",
+      url: "" },
+    { name: "終活・渡す側編", range: "第20〜24講", emoji: "📜", color: "amber",
       desc: "遺言・家族信託・死後事務。「渡す側」に回った瞬間に必要になる、資産凍結と争族の予防線。",
       url: "" },
-    { name: "おひとりさま防衛編", range: "第61〜67講", emoji: "🛡️", color: "sky",
+    { name: "介護編", range: "第25〜29講", emoji: "🛏️", color: "emerald",
+      desc: "特養は先着順ではなくスコア順。介護離職と共倒れを回避する、二段構えのサバイバル経済学。",
+      url: "" },
+    { name: "離婚サバイバル編", range: "第30〜34講", emoji: "💋", color: "red",
+      desc: "財産分与、特有財産の立証、共有名義の蟻地獄。人生のやり直しで、資産を削られないための実務。",
+      url: "" },
+    { name: "占い・人間ハッキング編", range: "第35〜39講", emoji: "🔮", color: "purple",
+      desc: "バーナム効果からコールドリーディングまで。占いのカラクリを暴き、対人戦略に転用する。",
+      url: "" },
+    { name: "おひとりさま防衛編", range: "続編・準備中", emoji: "🛡️", color: "sky",
       desc: "身元保証、入院、孤独死対策、老後資金。誰にも頼らない人生を制度で武装する防衛講義。",
       url: "" },
   ],
 
   // ピックアップ講義（個別note記事のURL）
   lectures: [
-    { no: "第12講", tag: "地方慣習", tagClass: "bg-emerald-950 text-emerald-400", price: "¥500",
+    { no: "第1講", tag: "実家売却", tagClass: "bg-amber-950 text-amber-400", price: "無料公開中",
+      title: "実家の売却と親族への伝え方——「本家なのに売るのか」と言われたら",
+      desc: "「本家」に法的な定義はない。維持コストの数字と、そのまま使える連絡文テンプレで、波風を最小にして実家を動かす開講記念講義。",
+      cta: "無料で読む 🐍",
+      url: "" },
+    { no: "第2講", tag: "地方慣習", tagClass: "bg-emerald-950 text-emerald-400", price: "¥500",
       title: "「右に倣え」の近所付き合いを、波風立てずにスルーする脱出マニュアル",
       desc: "誰も住んでいない実家への出頭要請の正体を暴き、最高裁判例を印籠にして静かに縁を切る技術。",
       cta: "この講義をダウンロードする 🐍",
       url: "" },
-    { no: "第13講", tag: "実家片付け", tagClass: "bg-emerald-950 text-emerald-400", price: "¥500",
+    { no: "第3講", tag: "実家片付け", tagClass: "bg-emerald-950 text-emerald-400", price: "¥500",
       title: "溜め込む親の脳をハッキングして、喧嘩せずに荷物を捨てる心理誘導フレーズ",
       desc: "「捨てる」を会話から追放し、親のOSに合わせた「譲る・活かす・守る」のコマンドで実家を空にせよ。",
       cta: "この講義をダウンロードする 🐍",
-      url: "" },
-    { no: "第11講", tag: "離婚サバイバル", tagClass: "bg-red-950 text-red-400", price: "¥500",
-      title: "共有名義（50:50）という名の蟻地獄からスマートに脱出する不動産ハック",
-      desc: "ペアローン、権利割合のしがらみで「家が売れないから離婚できない」と絶望している羊さんへ。",
-      cta: "この講義をダウンロードする 💋",
       url: "" },
   ],
 
@@ -266,7 +278,7 @@ const CONFIG = {
                     <li><span class="text-gray-400">運営組織：</span> スネークラボ研究所（Survival Strategy Room）</li>
                     <li><span class="text-gray-400">最高責任者：</span> スネーク博士 ＆ スネーク女史</li>
                     <li><span class="text-gray-400">業務内容：</span> 資産防衛ロジックの提供、制度・契約リテラシー講義の配信、占術統計データを用いた対人戦略の解説</li>
-                    <li><span class="text-gray-400">連絡先：</span> info@dappi-lab.com</li>
+                    <li><span class="text-gray-400">連絡先：</span> <a href="contact.html" class="text-gray-300 underline hover:text-white">お問い合わせフォーム</a></li>
                 </ul>
             </div>
             <div>
