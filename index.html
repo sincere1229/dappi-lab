@@ -100,6 +100,25 @@ const CONFIG = {
       cta: "この講義をダウンロードする 💋",
       url: "" },
   ],
+
+  // 無料コラム（同リポジトリ内のHTML。新規コラム追加時はここに1行足す）
+  columns: [
+    { file: "column-01-sougi.html", tag: "葬儀", tagClass: "bg-emerald-950 text-emerald-400",
+      title: "費用で後悔しないために：家族葬・直葬の適正価格を見極める",
+      desc: "「一式」の罠を見抜き、1円も毟られないスマートな発注実務。" },
+    { file: "column-02-kaigo.html", tag: "介護", tagClass: "bg-emerald-950 text-emerald-400",
+      title: "在宅限界を見極める：特養の入所スコアとブリッジ施設のサバイバル経済学",
+      desc: "特養は先着順ではなくスコア順。介護離職を避ける二段構えの実務。" },
+    { file: "column-03-jikka.html", tag: "実家", tagClass: "bg-amber-950 text-amber-400",
+      title: "空き家は最大の負債：2026年最新の空き家大増税リスクと遠隔スピード売却",
+      desc: "法改正に伴う大増税リスクと、遠方から実家を現金化する遠隔売却実務。" },
+    { file: "column-04-rikon.html", tag: "離婚サバイバル", tagClass: "bg-red-950 text-red-400",
+      title: "資産を守るリーガルマインド：特有財産の立証と口座開示手続",
+      desc: "財産分与で削られないための立証責任と、民事執行法改正の使い方。" },
+    { file: "column-05-oracle.html", tag: "人間ハッキング", tagClass: "bg-purple-950 text-purple-400",
+      title: "人間関係の統計学:東洋占術のロジックをビジネスに応用する理論",
+      desc: "九星気学・五行思想のフレームワークと、依存を見抜く防衛術。" },
+  ],
 };
 /* ============================================================ */
 </script>
@@ -112,6 +131,7 @@ const CONFIG = {
             </div>
             <div class="flex gap-6 text-sm font-medium text-gray-400">
                 <a href="#youtube" id="nav-youtube" class="hover:text-white transition">YouTube</a>
+                <a href="#free-columns" class="hover:text-white transition">無料コラム</a>
                 <a href="#columns" class="hover:text-white transition">生存講義(note)</a>
                 <a href="#tools" class="hover:text-white transition">資産防衛ツール</a>
             </div>
@@ -171,6 +191,15 @@ const CONFIG = {
             </a>
         </div>
         <div id="shorts-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- 📖 FREE COLUMNS -->
+    <section id="free-columns" class="py-16 px-6 max-w-7xl mx-auto">
+        <div class="mb-10 border-l-4 border-neon pl-4">
+            <h2 class="text-2xl font-black text-white tracking-wider">まずは無料で、皮を一枚。研究所コラム</h2>
+            <p class="text-gray-400 text-sm mt-1">会員登録なし・全文無料。ここで研究所のロジックを体験してから、有料講義に進みなさい。</p>
+        </div>
+        <div id="free-columns-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
     </section>
 
     <!-- 🐍 SERIES SHELF -->
@@ -348,6 +377,24 @@ CONFIG.series.forEach(sr => {
       ? `<a href="${sr.url}" target="_blank" rel="noopener" class="mt-5 block w-full py-2 bg-zinc-800 text-center text-xs font-bold text-white rounded-lg hover:bg-zinc-700 transition">このシリーズを見る ＞</a>`
       : `<div class="mt-5 text-center"><span class="badge-soon text-[10px] font-bold px-3 py-1 rounded inline-block">COMING SOON</span></div>`}`;
   seriesRoot.appendChild(card);
+});
+
+/* 無料コラム */
+const colRoot = document.getElementById("free-columns-grid");
+CONFIG.columns.forEach(c => {
+  const card = el("a", "bg-dark-card rounded-xl p-6 flex flex-col justify-between hover:border-red-600 transition block");
+  card.href = c.file;
+  card.innerHTML = `
+    <div>
+      <div class="flex justify-between items-center mb-4">
+        <span class="${c.tagClass} text-xs px-2 py-1 rounded font-bold">${esc(c.tag)}</span>
+        <span class="badge-live text-[10px] font-bold px-2 py-0.5 rounded">FREE</span>
+      </div>
+      <h4 class="text-base font-bold text-white mb-2">${esc(c.title)}</h4>
+      <p class="text-gray-400 text-xs line-clamp-3 leading-relaxed">${esc(c.desc)}</p>
+    </div>
+    <span class="mt-5 text-xs text-neon-red font-bold">全文を読む（無料） ＞</span>`;
+  colRoot.appendChild(card);
 });
 
 /* ピックアップ講義 */
